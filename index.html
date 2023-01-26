@@ -9,34 +9,42 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- UI -->
     <div class="ui">
         <div class="ui__title">Hue value</div>
         <input type="range" min="0" max="360" class="hue-slider"></input>
     </div>
+
+    <!-- Background -->
     <div class="wall"></div>
     <div class="floor"></div>
+
+    <!-- Lavalamp -->
     <div class="lavalamp">
         <div class="lavalamp__top"></div>
         <div class="lavalamp__middle">
             <div class="blobs">
-                <div class="blob top"></div>
-                <div class="blob bottom"></div>
+                <div class="blob blob--top"></div>
+                <div class="blob blob--bottom"></div>
             </div>
         </div>
         <div class="lavalamp__bottom"></div>
     </div>
+
+    <!-- Lavalamp effects -->
     <div class="lavalamp-wall-shadow"></div>
     <div class="lavalamp-floor-shadow"></div>
 
+    <!-- SVG blob filter -->
     <svg class="hide" xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
-            <filter id="goo">
+            <filter id="blob">
             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-            <feBlend in="SourceGraphic" in2="goo" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="blob" />
+            <feBlend in="SourceGraphic" in2="blob" />
             </filter>
         </defs>
-      </svg>
+    </svg>
     <script type="module" src="js/main.js"></script>
 </body>
 </html>
