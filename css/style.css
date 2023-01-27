@@ -17,6 +17,9 @@ html, body {
 
 body {
     background: #112035;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .hide {
@@ -83,22 +86,23 @@ input[type=range]::-webkit-slider-thumb {
 
 /* Effects */
 .lavalamp-wall-shadow {
-    bottom: 50px;
+    bottom: 33px;
     z-index: 0;
     position: absolute;
-    width: 100%;
+    width: 1200%;
     height: 100%;
     animation: blob-light 5s infinite alternate ease-in-out;
     background: radial-gradient(circle, hsl(var(--hue), 46%, 54%) 0%, transparent 18%);
 }
 
 .lavalamp-floor-shadow {
-    bottom: -210px;
+    bottom: -220px;
     z-index: 0;
     position: absolute;
-    width: 100%;
+    width: 1200px;
+    left: 50%;
     height: 100%;
-    transform: scaleY(.25);
+    transform: scaleY(.25) translateX(-50%);
     background: radial-gradient(circle, rgb(0 0 0 / 50%) 0%, rgba(228,70,252,0) 25%);
 }
 
